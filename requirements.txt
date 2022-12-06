@@ -1,0 +1,32 @@
+# pip install -r requirements.txt
+
+# base ----------------------------------------
+matplotlib
+numpy
+opencv-python
+Pillow
+PyYAML
+scipy
+torch>=1.8.0
+torchvision>=0.9.0
+tqdm
+rule_engine
+# logging -------------------------------------
+tensorboard
+loguru
+# wandb
+
+# plotting ------------------------------------
+seaborn
+pandas
+scikit-image
+# export --------------------------------------
+# coremltools>=4.1
+# onnx>=1.8.1
+# scikit-learn==0.19.2  # for coreml quantization
+
+# extras --------------------------------------
+thop  # FLOPS computation
+pycocotools>=2.0  # COCO mAP
+GPUtil
+dearpygui

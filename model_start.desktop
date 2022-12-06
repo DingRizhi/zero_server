@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=model_start
+Comment=model_start
+Exec=/home/adt/micro-i/deep_model/GrpcServer/GrpcServer/engine_luola/start.sh
+Icon=/home/adt/micro-i/deep_model/GrpcServer/model.png
+Terminal=false
+StartupNotify=false
+Type=Application
+Categories=Application;Development
+Comment[en_US]=model_start
+Name[en_US]=model_start

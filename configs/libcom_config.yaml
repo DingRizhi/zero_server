@@ -1,0 +1,114 @@
+global_config:
+  ip: '127.0.0.1'
+  port: '9099'
+  num_workers: 110
+
+det_models:
+  - photo_ids: [ 2, 22 ]
+    device_id: { 0: '3', 1: '3' }
+    weight_path: '../weights/FC_YOUMO_A6.pt'
+    filter: null
+    enhance: False
+    analyze_defects: ['juchi', 'ymbj', 'bengbian', 'ymkl']
+    class_dict: {  0: 'juchi', 1: 'ymbj', 2: 'bengbian', 3: 'ymkl' }
+    conf_thres: 0.3
+    iou_thres: 0.45
+    resize: null
+    model_copies: 1
+
+  - photo_ids: [ 1 ]
+    device_id: { 0: '3', 1: '3' }
+    weight_path: '../weights/FC_DM_A16.pt'
+    filter: null
+    enhance: False
+    analyze_defects: [ 'huashang', 'cashang']
+    class_dict: { 0: 'huashang', 1: 'cashang' }
+    conf_thres: 0.5
+    iou_thres: 0.45
+    resize: null
+    model_copies: 1
+
+  - photo_ids: [ 4,7,8,11,12,15,16,19,20 ]
+    device_id: { 0: '3', 1: '3' }
+    weight_path: '../weights/FC_CM_A16.pt'
+    filter: null
+    enhance: False
+    analyze_defects: ['huashang', 'cashang', 'zangwu']
+    class_dict: { 0: 'huashang', 1: 'cashang', 2: 'zangwu' }
+    conf_thres: 0.3
+    iou_thres: 0.45
+    resize: null
+    model_copies: 1
+
+  - photo_ids: [ 1 ]
+    device_id: { 0: '20', 1: '20' }
+    weight_path: '../weights/FC_DZ_A10.pt'
+    filter: null
+    enhance: False
+    analyze_defects: ['dianzhuang', 'zangwu']
+    class_dict: { 0: 'dianzhuang', 1: 'zangwu', 2: 'huichen' }
+    conf_thres: 0.65
+    iou_thres: 0.45
+    resize: null
+    model_copies: 1
+
+  - photo_ids: [ 4 ]
+    device_id: { 0: '20', 1: '20' }
+    weight_path: '../weights/FC_DZ_A10.pt'
+    filter: null
+    enhance: False
+    analyze_defects: ['dianzhuang', 'zangwu']
+    class_dict: { 0: 'dianzhuang', 1: 'zangwu', 2: 'huichen' }
+    conf_thres: 0.65
+    iou_thres: 0.45
+    resize: null
+    model_copies: 1
+
+  - photo_ids: [ 4 ]
+    device_id: { 0: '3', 1: '3' }
+    weight_path: '../weights/FC_WMT_A7.pt'
+    filter: null
+    enhance: False
+    analyze_defects: ['wmt']
+    class_dict: { 0: 'wmt' }
+    conf_thres: 0.3
+    iou_thres: 0.45
+    resize: null
+    model_copies: 1
+
+  - photo_ids: [ 9,13,17,21 ]
+    device_id: { 0: '3', 1: '3' }
+    weight_path: '../weights/FC_DW_A6.pt'
+    filter: null
+    enhance: False
+    analyze_defects: ['daowen', 'daowen1']
+    class_dict: { 0: 'daowen', 1: 'daowen1' }
+    conf_thres: 0.5
+    iou_thres: 0.45
+    resize: null
+    model_copies: 1
+
+  - photo_ids: [ 2, 22 ]
+    device_id: { 0: '3', 1: '3' }
+    weight_path: '../weights/FC_YM_A1.pt'
+    filter: null
+    enhance: False
+    analyze_defects: ['YM']
+    class_dict: {  0: 'YM' }
+    conf_thres: 0.5
+    iou_thres: 0.45
+    resize: null
+    model_copies: 1
+
+cls_models: [ ]
+
+post_cls_models:
+  - defect: ['dianzhuang', 'huichen']
+    device_id: { 0: '1'}
+    backbone: 'resnet18v2'
+    num_classes: 2
+    class_dict: { 0: 'dianzhuang', 1: 'huichen'}
+#    weight_path: '../weights/watch_dian_resnet18_focalloss.pt'
+    weight_path: '../weights/watch_dian_resnet_focalloss.pt'
+    img_size: 112
+    save_img: False

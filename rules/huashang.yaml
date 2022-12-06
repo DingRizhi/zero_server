@@ -1,0 +1,7 @@
+rules:
+  - description: small heidian shuold be killed
+    rule: bb_width < 6 and bb_height < 6
+
+  - description: SSLv3 is enabled
+    rule: score < 0.99
+
